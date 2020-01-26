@@ -1,12 +1,12 @@
 const puppeteer = require("puppeteer");
-var atob = require("atob");
+let pesquisa = 'bradesco+saude'
 (async () => {
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--disable-setuid-sandbox"]
   });
   const page = await browser.newPage();
   await page.goto(
-    "https://www.google.com/search?q=bradesco+saude&hl=pt-BR&tbm=isch"
+    `https://www.google.com/search?q=${pesquisa}&hl=pt-BR&tbm=isch`
   );
   //   await page.screenshot({path: 'buddy-screenshot.png'});
   let attr = await page.$$(".rg_l img");
